@@ -1,0 +1,32 @@
+﻿<Properties>
+  <DisabledProjects>
+    <String>ScoreDataSaverLib/ScoreDataSaverLib.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|Mixed Platforms" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ScoreSaver/Manager.cs">
+    <Files>
+      <File FileName="ScoreFramwork/Score.cs" Line="6" Column="6" />
+      <File FileName="ScoreFramwork/ScoreBuilder.cs" Line="1" Column="1" />
+      <File FileName="ScoresMVC/Controllers/AccountController.cs" Line="1" Column="1" />
+      <File FileName="ScoresMVC/Controllers/MatchController.cs" Line="1" Column="1" />
+      <File FileName="ScoreDataSaverLib/ISaverServiceContract.cs" Line="1" Column="1" />
+      <File FileName="ScoreDataSaverLib/DAL/ApplicationDAL.cs" Line="1" Column="1" />
+      <File FileName="ScoreCollector/DataCollector.cs" Line="4" Column="4" />
+      <File FileName="ScoreCollector/SoccerStandBuilder.cs" Line="126" Column="126" />
+      <File FileName="ScoreCollector/Program.cs" Line="1" Column="1" />
+      <File FileName="ScoreFramwork/ScoresTypes.cs" Line="1" Column="1" />
+      <File FileName="ScoreSaver/AppConfig.cs" Line="1" Column="1" />
+      <File FileName="ScoreSaver/Manager.cs" Line="1" Column="1" />
+      <File FileName="ScoreDataSaverLib/SaverBack.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/admin/Dropbox/eddy/ScoreCollector/ScoreCollector/DataCollector.cs" line="30" column="1" />
+      <Breakpoint file="/Users/admin/Dropbox/eddy/ScoreCollector/ScoreCollector/DataCollector.cs" line="23" column="1" />
+      <Breakpoint file="/Users/admin/Dropbox/eddy/ScoreCollector/ScoreCollector/DataCollector.cs" line="43" column="1" />
+      <Breakpoint file="/Users/admin/Dropbox/eddy/ScoreCollector/ScoreCollector/DataCollector.cs" line="41" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ScoresDAL">
+  <DataContextMoniker Name="/ScoresDALDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c3e1472a-d2cf-4d04-b3db-32454119c721" absoluteBounds="0.75, 1.25, 2, 2.5401025390625">
+      <DataClassMoniker Name="/ScoresDALDataContext/Match" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f00f79f5-f1b4-412c-8be4-8e2a548cc669" absoluteBounds="0.76500000000000012, 1.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
