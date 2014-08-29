@@ -7,7 +7,7 @@ using System.Diagnostics;
 namespace ScoreFramwork {
     public sealed class SoccerStandBuilder : ScoreBuilder {
 
-        public static string SiteName = "http://www.soccerstand.com/livescore/";
+        public static string SiteName = "http://scores.espn.go.com/nba/scoreboard?date=20140312";
 
 
 
@@ -27,30 +27,14 @@ namespace ScoreFramwork {
             // Load with raw string
             doc.LoadHtml(rawData);
 
-            // Extract body
-            HtmlAgilityPack.HtmlNode body = doc.DocumentNode.SelectSingleNode("//body");
-            
-            HtmlAgilityPack.HtmlNodeCollection matchCollection = body.SelectNodes("//div[starts-with(@class,'league_container soccer is_international')]");
 
-            foreach (var m in matchCollection) {
-                string league = "";
-                // League name
-                try {
-                    league = m.ChildNodes[1].ChildNodes[0].SelectSingleNode("./text()[normalize-space()]").InnerText.Trim();
-                } catch(Exception ex){
-                    league = m.ChildNodes[0].ChildNodes[0].SelectSingleNode("./text()[normalize-space()]").InnerText.Trim();
-                }
 
-                HtmlAgilityPack.HtmlNodeCollection gameCollection = null;
-                try {
-                    gameCollection = m.ChildNodes[3].SelectNodes("./table/tbody/tr");
-                } catch (Exception ex) {
-                    gameCollection = m.ChildNodes[1].SelectNodes("./table/tbody/tr");
-                }
-                
-                for (int j = 0; j < gameCollection.Count; j++) {
-                    _innerScore.Add(BuildScore(gameCollection[j], league));
-                }
+            HtmlAgilityPack.HtmlNodeCollection gameCollection = doc.DocumentNode.SelectNodes("//div[contains(@id,'gamebox')]/.");
+
+            foreach (var rawGame in gameCollection)
+            {
+               _innerScore.Add(BuildScore(rawGame, ""));
+               
             }
 
 
@@ -59,21 +43,19 @@ namespace ScoreFramwork {
 
         private Score BuildScore(HtmlAgilityPack.HtmlNode scoreNode, string league) {
 
-
-
             Score score = new Score();
             
             // Match date 
-            score.EventDate = GetDate(scoreNode);
+            //score.EventDate = GetDate(scoreNode);
             
             // League name 
             score.LeagueName = league;
             
             // Get Home Team
-            score.HomeTeam = scoreNode.ChildNodes[7].ChildNodes[1].SelectSingleNode("./text()[normalize-space()]").InnerText.Trim();
+            score.HomeTeam = scoreNode.SelectSingleNode(scoreNode.XPath + "//p[contains(@id,'hNameOffset')]").InnerText.Trim();
             
             // Get Away Team
-            score.AwayTeam = scoreNode.ChildNodes[9].ChildNodes[0].SelectSingleNode("./text()[normalize-space()]").InnerText.Trim();
+            score.AwayTeam = scoreNode.SelectSingleNode(scoreNode.XPath + "//p[contains(@id,'aNameOffset')]").InnerText.Trim();
             
             // Get Home Team score
             int parsedScore = -1;

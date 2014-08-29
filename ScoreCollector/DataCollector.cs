@@ -71,7 +71,7 @@ namespace ScoreCollector {
 
             string sitePath = basePath + sportFiled + "/" + dataDate;
 
-            return client.DownloadString(sitePath);
+            return client.DownloadString(basePath);
         }
     }
 }
