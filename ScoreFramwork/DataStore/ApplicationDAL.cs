@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ScoreFramwork;
+using System.Data.SqlClient;
 
 namespace ScoreDataSaverLib.DAL {
     public static class ApplicationDAL {
@@ -10,61 +11,48 @@ namespace ScoreDataSaverLib.DAL {
         public static string ConnectionString { get; set; }
         public static void InsertScoreList(List<Game> listScore) {
 
-           /* using (ScoresDALDataContext ctx = new ScoresDALDataContext(ConnectionString)) {
-                Match match = null;
+            /* using (ScoresDALDataContext ctx = new ScoresDALDataContext(ConnectionString)) {
+                 Match match = null;
                 
-                try {
+                 try {
                     
-                    foreach (var score in listScore) {
-                        match = TranslateScoreToMatch(score);
+                     foreach (var score in listScore) {
+                         match = TranslateScoreToMatch(score);
                         
 
                         
 
-                        if (match != null) {
+                         if (match != null) {
                             
-                            ctx.Matches.InsertOnSubmit(match);
+                             ctx.Matches.InsertOnSubmit(match);
                             
 
                             
-                        }
-                    }
+                         }
+                     }
 
-                    ctx.SubmitChanges();
+                     ctx.SubmitChanges();
 
-                } catch (Exception ex) {
+                 } catch (Exception ex) {
                     
-                }
+                 }
 
                 
                 
-            }*/
+             }*/
         }
 
         public static void InsertScoreData(Game score) {
 
-           /* using (ScoresDALDataContext ctx = new ScoresDALDataContext(ConnectionString)) {
-                Match match = null;
+            using (SqlConnection ctx = new SqlConnection(ConnectionString)) {
 
-                try {
-                     
-                    match = TranslateScoreToMatch(score);
-                        
-                    if (match != null) {
-    
-                        ctx.Matches.InsertOnSubmit(match);
-                        
-                    }
-                    
-                    ctx.SubmitChanges();
+                using (SqlCommand cmd = ctx.CreateCommand()) {
 
-                } catch (Exception ex) {
-
+                    cmd.CommandText = "INSERT INTO ";
                 }
 
 
-
-            }*/
+            }
         }
 
         //private static Match TranslateScoreToMatch(Score score) {
