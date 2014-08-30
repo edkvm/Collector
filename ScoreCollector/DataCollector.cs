@@ -6,6 +6,7 @@ using ScoreFramwork;
 using System.Net;
 
 namespace ScoreCollector {
+
     public class DataCollector {
 
 
@@ -27,7 +28,7 @@ namespace ScoreCollector {
             _syncDataWithSite.Stop();
             
             try {
-                List<Score> data = ParseData(DateTime.Now);
+                List<Game> data = ParseData(DateTime.Now);
                 OnNewData(data);
             } catch (Exception ex) {
                 // TODO: log
@@ -36,11 +37,11 @@ namespace ScoreCollector {
             }
         }
 
-        public static List<Score> ParseData(DateTime date) {
+        public static List<Game> ParseData(DateTime date) {
 
-            SoccerStandBuilder sb = new SoccerStandBuilder();
+            ESPNSoccerCollector sb = new ESPNSoccerCollector();
 
-            sb.BuildScore(GetDataFromSite(SoccerStandBuilder.SiteName, "soccer", date));
+            sb.BuildScore(GetDataFromSite(ESPNSoccerCollector.SiteName, "soccer", date));
 
             return sb.GetScore();
 

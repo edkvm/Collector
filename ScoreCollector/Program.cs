@@ -26,7 +26,7 @@ namespace ScoreCollector {
                 
         }
 
-        static void dt_OnNewData(List<Score> data) {
+        static void dt_OnNewData(List<Game> data) {
             Debug.WriteLine("Building Scores list");
 			Console.WriteLine ("Data recived:{0}",data.Count);;
         }

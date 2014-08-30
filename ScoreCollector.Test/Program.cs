@@ -8,7 +8,7 @@ using ScoreDataSaverLib.DAL;
 namespace ScoreCollector.Test {
     class Program {
         static void Main(string[] args) {
-            Score s = new Score {
+            Game s = new Game {
                 AwayScore = 1,
                 EventDate = DateTime.Now,
                 LeagueName = "England",
@@ -23,13 +23,13 @@ namespace ScoreCollector.Test {
 
         }
 
-        public static void TestDB(Score score){
-            ApplicationDAL.InsertScoreList(new List<Score>() { score });
+        public static void TestDB(Game score){
+            ApplicationDAL.InsertScoreList(new List<Game>() { score });
         }
 
-        public static void TestService(Score score) {
+        public static void TestService(Game score) {
             SaverReference.SaverServiceContractClient sc = new SaverReference.SaverServiceContractClient();
-            if (sc.SaveScore(new Score[] { score })) {
+            if (sc.SaveScore(new Game[] { score })) {
                 Console.WriteLine("Yeah!");
             }
         }

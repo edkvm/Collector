@@ -47,11 +47,6 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\SaverReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ScoreCollector\ScoreCollector.csproj">
@@ -62,44 +57,9 @@
       <Project>{CB28C07E-D7BE-4480-8CD0-CC94B7F25358}</Project>
       <Name>ScoreFramwork</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ScoreSaver\ScoreSaver.csproj">
-      <Project>{1CBDAEE8-3EF5-4318-A0A9-02119CF6871E}</Project>
-      <Name>ScoreSaver</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\SaverReference\SaverFront.wsdl" />
-    <None Include="Service References\SaverReference\Service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SaverReference\Service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SaverReference\Service2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\SaverReference\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SaverReference\Service.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SaverReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SaverReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SaverReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

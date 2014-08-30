@@ -41,9 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataStore\ApplicationDAL.cs" />
+    <Compile Include="DataStore\SaverBack.cs" />
+    <Compile Include="ICollectorConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Score.cs" />
-    <Compile Include="ScoreBuilder.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="BaseCollector.cs" />
     <Compile Include="ScoresTypes.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,6 +4,6 @@ using System.Linq;
 using System.Text;
 
 namespace ScoreFramwork {
-    public delegate void Notify();
-    public delegate void NewDate(List<Game> data);
+    public interface ICollectorConfig {
+    }
 }
